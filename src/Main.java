@@ -21,16 +21,27 @@ public class Main {
         List<Wine> listThree = new ArrayList<>(wines);
         List<Wine> listFour = new ArrayList<>(wines);
 
-        List<Wine> shuffledList = new ArrayList<>(wines);
-        readFiles.shuffleWines(shuffledList); //hjelpefunkjson fra readfiles som shuffler listen
+        //hjelpefunkjson fra readfiles som shuffler listen
+        List<Wine> shuffledListOne = new ArrayList<>(wines);
+        readFiles.shuffleWines(shuffledListOne);
+        List<Wine> shuffledListTwo = new ArrayList<>(wines);
+        readFiles.shuffleWines(shuffledListTwo);
+        List<Wine> shuffledListFour = new ArrayList<>(wines);
+        readFiles.shuffleWines(shuffledListFour);
 
-        System.out.println(shuffledList.subList(0,10));
+        //sjekk for å se at listene blir shufflet
+        System.out.println(shuffledListFour.subList(0,10));
         System.out.println(listFour.subList(0,10));
 
+        System.out.println("==========\nnon-shuffled lists\n");
         bubbleSort.bubbleSort(listOne);
         bubbleSort.bubbleSortOptimised(listTwo);
+        System.out.println("==========\nShuffled lists\n");
+        bubbleSort.bubbleSort(shuffledListOne);
+        bubbleSort.bubbleSortOptimised(shuffledListTwo);
+
         insertionSort.insertionSort(listThree);
         mergeSort.mergeSort(listFour);
-        mergeSort.mergeSort(shuffledList);
+        mergeSort.mergeSort(shuffledListFour);
     }
 }
