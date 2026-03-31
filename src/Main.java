@@ -21,15 +21,16 @@ public class Main {
         List<Wine> listThree = new ArrayList<>(wines);
         List<Wine> listFour = new ArrayList<>(wines);
 
-        List<Wine> mergeSorted = mergeSort.mergeSort(listFour);
+        List<Wine> shuffledList = new ArrayList<>(wines);
+        readFiles.shuffleWines(shuffledList); //hjelpefunkjson fra readfiles som shuffler listen
+
+        System.out.println(shuffledList.subList(0,10));
+        System.out.println(listFour.subList(0,10));
 
         bubbleSort.bubbleSort(listOne);
         bubbleSort.bubbleSortOptimised(listTwo);
         insertionSort.insertionSort(listThree);
-
-        System.out.println("\nMerge Sort (first 10 sorted):\n");
-        for (int i = 0; i < 10; i++) {
-            System.out.println(mergeSorted.get(i).getType() + " - alcohol: " + mergeSorted.get(i).getAlcohol() + " - quality: " + mergeSorted.get(i).getQuality());
-        }
+        mergeSort.mergeSort(listFour);
+        mergeSort.mergeSort(shuffledList);
     }
 }

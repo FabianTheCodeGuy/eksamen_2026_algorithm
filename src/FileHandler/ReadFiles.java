@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ReadFiles {
@@ -31,5 +32,9 @@ public class ReadFiles {
             e.printStackTrace();
         }
         return winesFromList;
+    }
+    public List<Wine> shuffleWines(List<Wine> wines) {
+        Collections.shuffle(wines); // shuffler listen tilfeldig
+        return wines;
     }
 }
