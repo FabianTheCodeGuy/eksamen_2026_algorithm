@@ -5,18 +5,15 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class MergeSort {
-    private int mergeCount = 0; // teller for antall merge operasjoner
+    private int mergeCount = 0;
+
+    public int getMergeCount() {
+        return mergeCount;
+    }
 
     public List<Wine> mergeSort(List<Wine> wines) {
         mergeCount = 0; // nullstill teller før hver sortering
-        List<Wine> sorted = mergeSortHelper(wines);
-
-        System.out.println("\nMerge Sort (first 10 sorted):\n");
-        for (int i = 0; i < 10; i++) {
-            System.out.println(sorted.get(i).getType() + " - alcohol: " + sorted.get(i).getAlcohol() + " - quality: " + sorted.get(i).getQuality());
-        }
-        System.out.println("Number of merge operations: " + mergeCount);
-        return sorted;
+        return mergeSortHelper(wines);
     }
 
     private List<Wine> mergeSortHelper(List<Wine> wines) {

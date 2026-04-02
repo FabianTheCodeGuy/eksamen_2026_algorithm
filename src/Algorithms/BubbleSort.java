@@ -5,13 +5,13 @@ import java.util.List;
 
 public class BubbleSort {
 
-    // Ikke-optimisert boblesortering - går gjennom hele listen hver runde
-    public List<Wine> bubbleSort(List<Wine> wines) {
+    public int bubbleSort(List<Wine> wines) {
         int n = wines.size();
-        int bubbleCount = 0;
+        int passCount = 0;
+
         for (int i = 0; i < n - 1; i++) {
-            bubbleCount++;
-            for (int j = 0; j < n - 1; j++) {
+            passCount++;
+            for (int j = 0; j < n - 1 - i; j++) {
                 if (wines.get(j).getAlcohol() > wines.get(j + 1).getAlcohol()) {
                     Wine temp = wines.get(j);
                     wines.set(j, wines.get(j + 1));
@@ -19,25 +19,17 @@ public class BubbleSort {
                 }
             }
         }
-        System.out.println("\nnon-optimised BubbleSort (first 10):\n");
-        for (int i = 0; i < 10; i++) {
-            System.out.println(wines.get(i).getType()
-                    + " - alcohol: "
-                    + wines.get(i).getAlcohol()
-                    + " - quality: "
-                    + wines.get(i).getQuality());
-        }
-        System.out.println("Passes (non-optimized): " + bubbleCount);
-        return wines;
+        return passCount;
     }
 
-    // Optimisert boblesortering - avslutter tidlig hvis listen allerede er sortert
-    public List<Wine> bubbleSortOptimised(List<Wine> wines) {
+    public int bubbleSortOptimised(List<Wine> wines) {
         int n = wines.size();
-        int bubbleCount = 0;
+        int passCount = 0;
+        boolean swapped;
+
         for (int i = 0; i < n - 1; i++) {
-            bubbleCount++;
-            boolean swapped = false;
+            passCount++;
+            swapped = false;
             for (int j = 0; j < n - 1 - i; j++) {
                 if (wines.get(j).getAlcohol() > wines.get(j + 1).getAlcohol()) {
                     Wine temp = wines.get(j);
@@ -48,15 +40,12 @@ public class BubbleSort {
             }
             if (!swapped) break;
         }
-        System.out.println("\noptimised BubbleSort (first 10):\n");
-        for (int i = 0; i < 10 ; i++) {
-            System.out.println(wines.get(i).getType()
-                    + " - alcohol: "
-                    + wines.get(i).getAlcohol()
-                    + " - quality: "
-                    + wines.get(i).getQuality());
-            }
-        System.out.println("Passes (optimized): " + bubbleCount);
-        return wines;
+        return passCount;
+    }
+
+    public void printFirst(List<Wine> wines, int n) {
+        for (int i = 0; i < Math.min(wines.size(), n); i++) {
+            System.out.println(wines.get(i).getType() + " - " + wines.get(i).getAlcohol());
+        }
     }
 }

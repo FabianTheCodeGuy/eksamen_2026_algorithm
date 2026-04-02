@@ -11,7 +11,7 @@ public class QuickSort {
         quickSort(wines, 0, wines.size() - 1, "first");
         System.out.println("\nQuick Sort - First element as pivot (first 10 sorted):\n");
         for (int i = 0; i < 10; i++) {
-            System.out.println(wines.get(i).getType() + " - alcohol: " + wines.get(i).getAlcohol() + " - quality: " + wines.get(i).getQuality());
+            System.out.println(wines.get(i).getType() + " - alcohol: " + wines.get(i).getAlcohol());
         }
         return wines;
     }
@@ -21,7 +21,7 @@ public class QuickSort {
         quickSort(wines, 0, wines.size() - 1, "last");
         System.out.println("\nQuick Sort - Last element as pivot (first 10 sorted):\n");
         for (int i = 0; i < 10; i++) {
-            System.out.println(wines.get(i).getType() + " - alcohol: " + wines.get(i).getAlcohol() + " - quality: " + wines.get(i).getQuality());
+            System.out.println(wines.get(i).getType() + " - alcohol: " + wines.get(i).getAlcohol());
         }
         return wines;
     }
@@ -31,7 +31,7 @@ public class QuickSort {
         quickSort(wines, 0, wines.size() - 1, "random");
         System.out.println("\nQuick Sort - Random element as pivot (first 10 sorted):\n");
         for (int i = 0; i < 10; i++) {
-            System.out.println(wines.get(i).getType() + " - alcohol: " + wines.get(i).getAlcohol() + " - quality: " + wines.get(i).getQuality());
+            System.out.println(wines.get(i).getType() + " - alcohol: " + wines.get(i).getAlcohol());
         }
         return wines;
     }
@@ -41,7 +41,7 @@ public class QuickSort {
         quickSort(wines, 0, wines.size() - 1, "median");
         System.out.println("\nQuick Sort - Median of three as pivot (first 10 sorted):\n");
         for (int i = 0; i < 10; i++) {
-            System.out.println(wines.get(i).getType() + " - alcohol: " + wines.get(i).getAlcohol() + " - quality: " + wines.get(i).getQuality());
+            System.out.println(wines.get(i).getType() + " - alcohol: " + wines.get(i).getAlcohol());
         }
         return wines;
     }
