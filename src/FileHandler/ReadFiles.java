@@ -8,7 +8,6 @@ import java.util.*;
 public class ReadFiles {
     public List<Wine> readFiles() {
         List<Wine> winesFromList = new ArrayList<>();
-        Set<Double> uniqueAlcohol = new HashSet<>(); // holder styr på unike alkoholverdier
 
         try (BufferedReader redWineRead = new BufferedReader(new FileReader("winequality-red.csv"));
              BufferedReader whiteWineRead = new BufferedReader(new FileReader("winequality-white.csv"))) {
@@ -18,19 +17,13 @@ public class ReadFiles {
 
             while ((line = redWineRead.readLine()) != null) {
                 String[] k = line.split(";");
-                double alcohol = Double.parseDouble(k[10]);
-                if (uniqueAlcohol.add(alcohol)) { // add() returnerer false hvis verdien allerede finnes
-                    winesFromList.add(new Wine("red", alcohol));
-                }
+                winesFromList.add(new Wine("red", Double.parseDouble(k[10])));
             }
 
-            whiteWineRead.readLine();
+            whiteWineRead.readLine(); // skipper header
             while ((line = whiteWineRead.readLine()) != null) {
                 String[] k = line.split(";");
-                double alcohol = Double.parseDouble(k[10]);
-                if (uniqueAlcohol.add(alcohol)) {
-                    winesFromList.add(new Wine("white", alcohol));
-                }
+                winesFromList.add(new Wine("white", Double.parseDouble(k[10])));
             }
 
         } catch (IOException e) {

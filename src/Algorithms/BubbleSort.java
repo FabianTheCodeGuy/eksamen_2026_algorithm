@@ -45,7 +45,7 @@ public class BubbleSort {
 
     public void printFirst(List<Wine> wines, int n) {
         for (int i = 0; i < Math.min(wines.size(), n); i++) {
-            System.out.println(wines.get(i).getType() + " - " + wines.get(i).getAlcohol());
+            System.out.printf("%s - %.2f%n", wines.get(i).getType(), wines.get(i).getAlcohol());
         }
     }
 }
