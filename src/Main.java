@@ -18,7 +18,6 @@ public class Main {
 
         List<Wine> wines = readFiles.readFiles();
 
-        // Making lists for BubbleSort
         List<Wine> listOne = new ArrayList<>(wines);
         List<Wine> listTwo = new ArrayList<>(wines);
         List<Wine> shuffledListOne = new ArrayList<>(wines);
@@ -47,7 +46,6 @@ public class Main {
         bubbleSort.printFirst(shuffledListTwo, 10);
         System.out.println("Passes (optimized shuffled): " + passes2Shuffled);
 
-        // Making lists for Insertion Sort
         List<Wine> listThree = new ArrayList<>(wines);
         List<Wine> shuffledListThree = new ArrayList<>(wines);
         readFiles.shuffleWines(shuffledListThree);
@@ -63,7 +61,6 @@ public class Main {
         insertionSort.printFirst(shuffledListThree, 10);
         System.out.println("Operations (shuffled): " + opsShuffled);
 
-        // Making lists for Merge Sort
         List<Wine> listFour = new ArrayList<>(wines);
         List<Wine> shuffledListFour = new ArrayList<>(wines);
         readFiles.shuffleWines(shuffledListFour);
@@ -79,7 +76,6 @@ public class Main {
         mergeSort.printFirst(mergeSortedShuffled, 10);
         System.out.println("Number of merges after shuffle: " + mergeSort.getMergeCount());
 
-        // Making lists for Quick Sort
         List<Wine> copy5 = new ArrayList<>(wines);
         List<Wine> copy6 = new ArrayList<>(wines);
         List<Wine> copy7 = new ArrayList<>(wines);

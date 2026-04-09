@@ -12,15 +12,15 @@ public class ReadFiles {
         try (BufferedReader redWineRead = new BufferedReader(new FileReader("winequality-red.csv"));
              BufferedReader whiteWineRead = new BufferedReader(new FileReader("winequality-white.csv"))) {
 
-            redWineRead.readLine(); // skipper header
-            String line; // tar vare på hver linje som leses
+            redWineRead.readLine();
+            String line;
 
             while ((line = redWineRead.readLine()) != null) {
                 String[] k = line.split(";");
                 winesFromList.add(new Wine("red", Double.parseDouble(k[10])));
             }
 
-            whiteWineRead.readLine(); // skipper header
+            whiteWineRead.readLine();
             while ((line = whiteWineRead.readLine()) != null) {
                 String[] k = line.split(";");
                 winesFromList.add(new Wine("white", Double.parseDouble(k[10])));
