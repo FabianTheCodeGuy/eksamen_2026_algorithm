@@ -33,7 +33,7 @@ public class ReadFiles {
     }
 
     public List<Wine> shuffleWines(List<Wine> wines) {
-        Collections.shuffle(wines); // shuffler listen tilfeldig
+        Collections.shuffle(wines);
         return wines;
     }
 }

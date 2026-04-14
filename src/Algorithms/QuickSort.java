@@ -54,14 +54,14 @@ public class QuickSort {
 
     private void quickSort(List<Wine> wines, int low, int high, String pivotStrategy) {
         if (low < high) {
-            comparisonCount += high - low; // teller sammenligninger
-            int pivotIndex = partition(wines, low, high, pivotStrategy);
+            comparisonCount += high - low;
+            int pivotIndex = selectAndPartition(wines, low, high, pivotStrategy);
             quickSort(wines, low, pivotIndex - 1, pivotStrategy);
             quickSort(wines, pivotIndex + 1, high, pivotStrategy);
         }
     }
 
-    private int partition(List<Wine> wines, int low, int high, String pivotStrategy) {
+    private int selectAndPartition(List<Wine> wines, int low, int high, String pivotStrategy) {
         switch (pivotStrategy) {
             case "first":
                 swap(wines, low, high);

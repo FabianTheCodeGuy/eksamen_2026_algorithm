@@ -12,7 +12,7 @@ public class MergeSort {
     }
 
     public List<Wine> mergeSort(List<Wine> wines) {
-        mergeCount = 0; // nullstill teller før hver sortering
+        mergeCount = 0;
         return mergeSortHelper(wines);
     }
 
